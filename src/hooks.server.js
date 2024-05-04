@@ -5,7 +5,7 @@ export async function handle({ event, resolve }) {
 	const { request, cookies } = event;
 	const { pathname } = new URL(request.url);
 	console.log(pathname);
-	if (['/login', '/api/login/'].includes(pathname)) {
+	if (['/','/login', '/api/login/'].includes(pathname)) {
 		return await resolve(event);
 	} else {
 		if (!cookies.get('token')) {
