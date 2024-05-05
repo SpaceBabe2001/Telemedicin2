@@ -13,12 +13,12 @@ export async function POST({ request, cookies }) {
 	if (!user) {
 		return new Response('Unauthorized', { status: 401 });
 	}
-	const match = bcrypt.compareSync(password, user.hashPass);
-	if (match) {
-		const token = jwt.sign({ id: user.id, email: user.email }, env.JWT_SECRET);
-		cookies.set('token', token, { httpOnly: true, path: '/' }); // cookies
-		return new Response('Logged in', { status: 200 });
-	} else {
-		return new Response('Unauthorized', { status: 401 });
-	}
+	// const match = bcrypt.compareSync(password, user.hashPass);
+	// if (match) {
+	// 	const token = jwt.sign({ id: user.id, email: user.email }, env.JWT_SECRET);
+	// 	cookies.set('token', token, { httpOnly: true, path: '/' }); // cookies
+	// 	return new Response('Logged in', { status: 200 });
+	// } else {
+	// 	return new Response('Unauthorized', { status: 401 });
+	// }
 }
