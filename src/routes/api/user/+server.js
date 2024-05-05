@@ -18,11 +18,11 @@ export async function POST({ request, cookies }) {
 	return new Response('Created', { status: 201 });
 }
 
-// export async function GET({ request, cookies }) {
-// 	const prisma = new PrismaClient({ log: ['query'] });
-// 	const res = await prisma.user.findMany();
-// 	return new Response(JSON.stringify(res), { status: 200 });
-// }
+export async function GET({ request, cookies }) {
+	const prisma = new PrismaClient({ log: ['query'] });
+	const res = await prisma.user.findMany();
+	return new Response(JSON.stringify(res), { status: 200 });
+}
 
 // export async function DELETE({ request, cookies }) {
 // 	const body = await request.json();
